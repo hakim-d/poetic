@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetic JS | HAKIM.ma</title>
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/monokai-sublime.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: #253536;
+            color: #bbb;
+            font-family: Arial, sans-serif;
+        }
+        .wrapper {
+            width: 700px;
+            margin: -50px auto 100px;
+            position: relative;
+        }
+        .description {
+            background: #23241f;
+            margin: 0;
+            padding: 15px 35px;
+            line-height: 24px;
+        }
+        .container {
+            padding: 0 10px;
+        }
+        @media only screen and (max-width: 768px){
+            .wrapper {width:100%;margin-top:0px;}
+        }
+        .mypoem {
+            font-family: 'Cairo', sans-serif;
+            border: 3px solid #99323F;
+            padding: 7px;
+        }
+        .code {
+            direction: ltr;
+            margin-bottom: 30px;
+        }
+        pre {margin: 0;}
+        @media only screen and (max-width: 1280px){
+            .header-bg {width: 100%;}
+        }
+    </style>
+</head>
+
+<body>
+    <center><img src="poetic-bg.png" class="header-bg"></center>
+    <div class="wrapper">
+    <div class="container">
+        <p class="description">
+            The classical Arabic poems are written such that each verse is written as two halves on the same row and separated by one or more punctuation marks or spaces. This Javascript library can do that easily.
+        </p>
+        <div class="code">
+<pre><code class="html">
+    // Easily set the arguments to produce the poem formatting:
+    &lt;script src="poetic.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        poetic.columnize( "target", "color", "delimiter_character",
+                    "delimiter_color", "delimiter_size", "line_height");
+    &lt;/script&gt;
+
+</code></pre>
+        </div>
+
+        <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;width:100%;color:#ddd;box-shadow: 0 5px 10px rgba(0,0,0,.2);background:#253536;}
+            .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+            .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+            .tg .tg-ka0p{font-weight:bold;vertical-align:top;color:#FFFB9F;}
+            .tg .tg-yw4l{vertical-align:top}
+            </style>
+            <table class="tg">
+              <tr>
+                <th class="tg-ka0p">Argument</th>
+                <th class="tg-ka0p">Definition</th>
+                <th class="tg-ka0p">Default</th>
+              </tr>
+              <tr>
+                <td class="tg-yw4l">target</td>
+                <td class="tg-yw4l">The DOM target</td>
+                <td class="tg-yw4l">body</td>
+              </tr>
+              <tr>
+                <td class="tg-yw4l">color</td>
+                <td class="tg-yw4l">The poem text color</td>
+                <td class="tg-yw4l">#000000</td>
+              </tr>
+              <tr>
+                <td class="tg-yw4l">delimiter_character</td>
+                <td class="tg-yw4l">The delimiter character to use between the poem 2 columns</td>
+                <td class="tg-yw4l">*</td>
+              </tr>
+              <tr>
+                <td class="tg-yw4l">delimiter_color</td>
+                <td class="tg-yw4l">The delimiter color</td>
+                <td class="tg-yw4l">null</td>
+              </tr>
+              <tr>
+                <td class="tg-yw4l">delimiter_size</td>
+                <td class="tg-yw4l">The delimiter size in percentage</td>
+                <td class="tg-yw4l">100%</td>
+              </tr>
+              <tr>
+                <td class="tg-yw4l">line_height</td>
+                <td class="tg-yw4l">The poem lines' height</td>
+                <td class="tg-yw4l">normal</td>
+              </tr>
+            </table>
+
+
+        <center><h2>A Poem By Al-Motanaby</h2></center>
+        <div class="poem-container">        
+        <div class="mypoem">
+                وفي الجهل قبل الموت موت لأهله # فأجسامهم قبل القبور قبور            
+            وأن امرأ لم يحي بالعلم ميت # فليس له حتى النشور نشور       
+            لَولا المَشَقَةُ سادَ النّاسُ كُلُّهُمُ#الجودُ يُفقِرُ والإقدامُ قَتَّالُ      
+            إِذَا رَأَيْتَ نُيُوْبَ اللَيْثِ بَارِزَةً #فَلَا تَظُنَّنَ أَنَّ اللَيْثَ يَبْتَسِمُ
+            لَا تَحْقَرَنَّ صَغِيْرًا فِيْ مُخَاصَمَةٍ #إِنَّ البَعُوْضَةَ تُدْمِيْ مُقْلَةَ الأَسَدِ            
+        </div>
+        </div>
+
+        <center><h2>HTML</h2></center>
+
+        <pre>
+            <code>
+&lt;div class="mypoem"&gt;
+        وفي الجهل قبل الموت موت لأهله # فأجسامهم قبل القبور قبور            
+    وأن امرأ لم يحي بالعلم ميت # فليس له حتى النشور نشور       
+    لَولا المَشَقَةُ سادَ النّاسُ كُلُّهُمُ#الجودُ يُفقِرُ والإقدامُ قَتَّالُ      
+    إِذَا رَأَيْتَ نُيُوْبَ اللَيْثِ بَارِزَةً #فَلَا تَظُنَّنَ أَنَّ اللَيْثَ يَبْتَسِمُ
+    لَا تَحْقَرَنَّ صَغِيْرًا فِيْ مُخَاصَمَةٍ #إِنَّ البَعُوْضَةَ تُدْمِيْ مُقْلَةَ الأَسَدِ   
+&lt;/div&gt;
+            </code>
+        </pre>
+
+        <p>
+            ⚡️ Notice how the 2 halves of the poem verses are delimited with #<br>
+            ⚡️ The line-breaks are important for the script to identify the poem verses.<br>
+            ⚡️ The DOM target ".mypoem" should be the first parent of the poem verses.
+        </p>
+
+        <center><h2>JS</h2></center>
+        <div class="code">
+            <pre>
+                <code class="html">
+&lt;script src="poetic.js"&gt;&lt;/script&gt;<br/>&lt;script&gt;<br />  poetic.columnize( ".mypoem", "#FFFB9F", "*",
+                    "#FFFFFF", "150%");<br />&lt;/script&gt;
+                </code>
+            </pre>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="poetic.js"></script>
+    <script>
+        poetic.columnize(".mypoem", "#FFFB9F", "*", "#FFFFFF", "150%");
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+
+</html>
