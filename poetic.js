@@ -11,7 +11,7 @@ var poetic = (function (){
     var style = document.createElement('style');
     style.type = 'text/css';
     if (!delimiter_color) delimiter_color = color;
-    style.innerHTML = `.poetic {color:${color}; direction: rtl; font-size: 1.6vw;}
+    style.innerHTML = `.poetic {color:${color}; direction: rtl; font-size: 1.6vw; box-sizing: content-box;}
                         @media only screen and (max-width: 789px) {.poetic{font-size: 2.6vw;}}
                         .poetic sadr, .poetic ajuz {
                          width: 44%; text-align: justify; text-align-last: justify; display: inline-block; font-size: 100%;
@@ -28,12 +28,13 @@ var poetic = (function (){
     bind.className += " poetic";
     var text = bind.innerHTML;
     text = "\n" + text.trim();
-    text = text.replace(/\n/gi, function checkStr(x,y){
-      if ( y == 0 ) return "<bayt><sadr>" + x;
-      else return "</ajuz></bayt>" + x + "<bayt><sadr>";
-    });
-    text = text.replace(/#/gi, function checkStr(x,y){
-      return "</sadr><ajuz>";
+    text = text.replace(/\n|#|\<br\>/gi, function checkStr(x,y){
+      if ( x == "\n" ) {
+        if ( y == 0 ) return "<bayt><sadr>" + x;
+        else return "</ajuz></bayt>" + x + "<bayt><sadr>";
+      }
+      if ( x == "#" ) { return "</sadr><ajuz>"; }
+      if ( x == "<br>" ) { return ""; }
     });
 
     // Apply the poem formatting
