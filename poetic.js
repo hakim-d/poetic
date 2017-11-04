@@ -28,7 +28,7 @@ var poetic = (function (){
                           .poetic bayt::after {display:none;}
                         }
                        `;
-    if (alternative) { style.innerHTML += `.poetic bayt:nth-child(even) {background: ${delimiter_color}22;}` }
+    if (alternative) { style.innerHTML += `.poetic bayt:nth-child(even) {background: ${delimiter_color}11;}` }
     document.getElementsByTagName('head')[0].appendChild(style);
 
     // Define the DOM target to apply the poem formatting
