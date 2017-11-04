@@ -6,7 +6,7 @@
 
 var poetic = (function (){
 
-  function columnize ( target = "body", color = "#000", delimiter = "*", delimiter_color = null, delimiter_size = "100%", line_height = "normal" ) {
+  function columnize ( target = "body", color = "#000", delimiter = "*", delimiter_color = null, delimiter_size = "100%", line_height = "normal", alternative = false ) {
     // Create the poem styles
     var style = document.createElement('style');
     style.type = 'text/css';
@@ -24,10 +24,11 @@ var poetic = (function (){
                           .poetic {font-size: 4.2vw;}
                           .poetic sadr, .poetic ajuz {width: 70%;}
                           .poetic ajuz {padding-right: 30%;}
-                          .poetic bayt {margin-bottom: 1.1em;}
+                          .poetic bayt {padding: 0.8em 0;}
                           .poetic bayt::after {display:none;}
                         }
                        `;
+    if (alternative) { style.innerHTML += `.poetic bayt:nth-child(even) {background: ${delimiter_color}22;}` }
     document.getElementsByTagName('head')[0].appendChild(style);
 
     // Define the DOM target to apply the poem formatting
