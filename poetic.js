@@ -15,7 +15,7 @@ var poetic = (function (){
                         .poetic sadr, .poetic ajuz {
                          width: 44%; text-align: justify; text-align-last: justify; display: inline-block; font-size: 100%;
                         }
-                        .poetic bayt {line-height: ${line_height}; display: block;}
+                        .poetic bayt {line-height: ${line_height}; display: block; padding: 0.3em 0;}
                         .poetic sadr {padding-left: 6%;}
                         .poetic ajuz {padding-right: 6%;}
                         .poetic bayt::after {content: "${delimiter}";font-size: ${delimiter_size}; color: ${delimiter_color};position: absolute;right: 50%; margin-right: -10px;width: 20px;height: 20px;text-align:center;}
