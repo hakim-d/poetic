@@ -24,7 +24,7 @@ var poetic = (function (){
                           .poetic {font-size: 4.2vw;}
                           .poetic sadr, .poetic ajuz {width: 70%;}
                           .poetic ajuz {padding-right: 30%;}
-                          .poetic bayt {padding: 0.8em 0;}
+                          .poetic bayt {padding: 0.5em 0;}
                           .poetic bayt::after {display:none;}
                         }
                        `;
