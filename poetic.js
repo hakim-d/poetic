@@ -13,6 +13,13 @@ var poetic = (function (){
     if (!delimiter_color) delimiter_color = color;
     style.innerHTML = `.poetic {color:${color}; direction: rtl; font-size: 1.6vw; box-sizing: content-box;}
                         @media only screen and (max-width: 789px) {.poetic{font-size: 2.6vw;}}
+                        @media only screen and (max-width: 480px) {
+                          .poetic {font-size: 4.2vw;}
+                          .poetic sadr, .poetic ajuz {width: 70%;}
+                          .poetic ajuz {padding-right: 30%;}
+                          .poetic bayt {margin-bottom: 1.1em;}
+                          .poetic bayt::after {display:none;}
+                        }
                         .poetic sadr, .poetic ajuz {
                          width: 44%; text-align: justify; text-align-last: justify; display: inline-block; font-size: 100%;
                         }
