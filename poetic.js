@@ -12,6 +12,13 @@ var poetic = (function (){
     style.type = 'text/css';
     if (!delimiter_color) delimiter_color = color;
     style.innerHTML = `.poetic {color:${color}; direction: rtl; font-size: 1.6vw; box-sizing: content-box;}
+                        .poetic sadr, .poetic ajuz {
+                         width: 44%; text-align: justify; text-align-last: justify; display: inline-block; font-size: 100%;
+                        }
+                        .poetic bayt {line-height: ${line_height}; display: block;}
+                        .poetic sadr {padding-left: 6%;}
+                        .poetic ajuz {padding-right: 6%;}
+                        .poetic bayt::after {content: "${delimiter}";font-size: ${delimiter_size}; color: ${delimiter_color};position: absolute;right: 50%; margin-right: -10px;width: 20px;height: 20px;text-align:center;}
                         @media only screen and (max-width: 789px) {.poetic{font-size: 2.6vw;}}
                         @media only screen and (max-width: 480px) {
                           .poetic {font-size: 4.2vw;}
@@ -20,13 +27,6 @@ var poetic = (function (){
                           .poetic bayt {margin-bottom: 1.1em;}
                           .poetic bayt::after {display:none;}
                         }
-                        .poetic sadr, .poetic ajuz {
-                         width: 44%; text-align: justify; text-align-last: justify; display: inline-block; font-size: 100%;
-                        }
-                        .poetic bayt {line-height: ${line_height}; display: block;}
-                        .poetic sadr {padding-left: 6%;}
-                        .poetic ajuz {padding-right: 6%;}
-                        .poetic bayt::after {content: "${delimiter}";font-size: ${delimiter_size}; color: ${delimiter_color};position: absolute;right: 50%; margin-right: -10px;width: 20px;height: 20px;text-align:center;}
                        `;
     document.getElementsByTagName('head')[0].appendChild(style);
 
