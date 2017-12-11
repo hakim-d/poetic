@@ -7,7 +7,7 @@
 var poetic = (function (){
 
   function columnize ( target = "body", color = "#000", delimiter = "*", delimiter_color = null, delimiter_size = "100%", line_height = "normal", alternative = false ) {
-    // Create the poem styles
+    // Create the poem css styles
     var style = document.createElement('style');
     style.type = 'text/css';
     if (!delimiter_color) delimiter_color = color;
@@ -28,7 +28,7 @@ var poetic = (function (){
                           .poetic bayt::after {display:none;}
                         }
                        `;
-    if (alternative) { style.innerHTML += `.poetic bayt:nth-child(even) {background: ${delimiter_color}11;}` }
+    if (alternative) { style.innerHTML += `.poetic bayt:nth-child(even) {background: ${delimiter_color}33;}` }
     document.getElementsByTagName('head')[0].appendChild(style);
 
     // Define the DOM target to apply the poem formatting
@@ -36,12 +36,14 @@ var poetic = (function (){
     bind.className += " poetic";
     var text = bind.innerHTML;
     text = "\n" + text.trim();
+    // Wrapping the poem with the verse tags: <bayt>, <sadr> and <ajuz>
     text = text.replace(/\n|#|\<br\>/gi, function checkStr(x,y){
       if ( x == "\n" ) {
         if ( y == 0 ) return "<bayt><sadr>" + x;
         else return "</ajuz></bayt>" + x + "<bayt><sadr>";
       }
       if ( x == "#" ) { return "</sadr><ajuz>"; }
+      // Removing html line-breaks
       if ( x == "<br>" ) { return ""; }
     });
 
