@@ -11,7 +11,7 @@ var poetic = (function (){
     var style = document.createElement('style');
     style.type = 'text/css';
     if (!delimiter_color) delimiter_color = color;
-    style.innerHTML = `.poetic {color:${color}; direction: rtl; font-size: 1.6vw; box-sizing: content-box;}
+    style.innerHTML = `.poetic {color:${color}; direction: rtl; font-size: 1vw; box-sizing: content-box;}
                         .poetic sadr, .poetic ajuz {
                          width: 44%; text-align: justify; text-align-last: justify; display: inline-block; font-size: 100%;
                         }
